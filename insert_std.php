@@ -21,7 +21,7 @@ echo "Connected successfully</br>";
 if (empty($id) || empty($en_name) || empty($en_surname) || empty($th_name) || empty($th_surname) || empty($major_code) || empty($email)) {
     echo "<script>alert('กรุณากรอกข้อมูลให้ครบทุกช่อง'); window.location.href = 'insert_std_form.html';</script>";
 }elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "<script>alert('แพทเทิร์นอีเมลม่ถูกต้อง'); window.location.href = 'insert_std_form.html';</script>";
+    echo "<script>alert('แพทเทิร์นอีเมลไม่ถูกต้อง'); window.location.href = 'insert_std_form.html';</script>";
 }else {
     $sql = "INSERT INTO `std_info` (`id`, `en_name`, `en_surname`, `th_name`, `th_surname`, `major_code`, `email`) VALUES ('$id', '$en_name', '$en_surname', '$th_name', '$th_surname', '$major_code', '$email')";
 

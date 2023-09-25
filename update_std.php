@@ -23,8 +23,8 @@ if (!$conn) {
 
 if (empty($id) || empty($en_name) || empty($en_surname) || empty($th_name) || empty($th_surname) || empty($major_code) || empty($email)) {
     echo "<script>alert('กรุณากรอกข้อมูลให้ครบทุกช่อง'); window.location.href = 'update_std_form.php?id=" . $oldid . "';</script>";
-}elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "<script>alert('แพทเทิร์นอีเมลไม่ถูกต้อง'); window.location.href = 'insert_std_form.html';</script>";
+} elseif (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "<script>alert('รูปแบบอีเมล์ไม่ถูกต้อง'); window.location.href = 'update_std_form.php?id=" . $oldid . "';</script>";
 } else {
     $sql = "UPDATE `std_info` SET `id`='$id', `en_name`='$en_name', `en_surname`='$en_surname', `th_name`='$th_name', `th_surname`='$th_surname', `major_code`='$major_code', `email`='$email' WHERE `id`='$oldid'";
 
